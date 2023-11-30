@@ -1,9 +1,9 @@
 import { View, StyleSheet, Text } from 'react-native'
 
-export function AboutScreen() {
+export function CartScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>About Our Restaurant</Text>
+      <Text style={styles.text}>CartScreen</Text>
     </View>
   )
 }

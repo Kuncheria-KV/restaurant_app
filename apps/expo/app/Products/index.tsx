@@ -1,4 +1,4 @@
-import { AboutScreen } from 'app/features/about/screen'
+import { ProductsScreen } from 'app/features/products/screen'
 import { Stack } from 'expo-router'
 
 export default function Screen() {
@@ -6,10 +6,10 @@ export default function Screen() {
     <>
       <Stack.Screen
         options={{
-          title: 'About',
+          title: 'Products',
         }}
       />
-      <AboutScreen />
+      <ProductsScreen />
     </>
   )
 }
