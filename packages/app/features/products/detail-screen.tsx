@@ -6,7 +6,7 @@ import { useLink } from 'solito/link'
 
 const { useParam } = createParam<{ id: string }>()
 
-export function UserDetailScreen() {
+export function ProductDetailScreen() {
   const [id] = useParam('id')
   const media = useMedia()
   const { width: windowWidth } = useWindowDimensions()
