@@ -5,6 +5,7 @@ import { themes, tokens } from '@tamagui/themes'
 import { createMedia } from '@tamagui/react-native-media-driver'
 
 import { animations } from './animations'
+import * as nikeThemes from "./theme/nike_theme_gen";
 
 const headingFont = createInterFont({
   size: {
@@ -60,7 +61,7 @@ export const config = createTamagui({
     body: bodyFont,
     heading: headingFont,
   },
-  themes,
+  themes:nikeThemes,
   tokens,
   media: createMedia({
     xs: { maxWidth: 660 },

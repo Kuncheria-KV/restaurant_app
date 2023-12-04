@@ -15,11 +15,9 @@ import {
   useWindowDimensions,
   View,
   ScrollView,
+  useTheme
 } from '@my/ui'
 import { ColorSelector } from '@my/ui'
-import { ProductCard } from '@my/ui/src'
-import { ChevronLeft } from '@tamagui/lucide-icons'
-import React from 'react'
 import { createParam } from 'solito'
 import { useLink } from 'solito/link'
 import Recommendations from './Recomendations'
@@ -33,9 +31,10 @@ export function ProductDetailScreen() {
   const link = useLink({
     href: '/',
   })
+  const theme = useTheme()
 
   return (
-    <ScrollView>
+    <ScrollView backgroundColor={theme.background} >
       <YStack>
         <Stack jc="space-around" flexDirection={media.sm ? 'column' : 'row'}>
           <View height={media.sm ? 300 : 400}>
