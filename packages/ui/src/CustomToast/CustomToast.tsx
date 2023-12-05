@@ -1,7 +1,7 @@
 import { Toast, useToastState } from '@tamagui/toast'
 import { YStack } from 'tamagui'
 
-export const NativeToast = () => {
+export const CustomToast = () => {
   const currentToast = useToastState()
 
   if (!currentToast || currentToast.isHandledNatively) {
@@ -19,6 +19,7 @@ export const NativeToast = () => {
       opacity={1}
       scale={1}
       animation="quick"
+      backgroundColor="$blue10Light"
     >
       <YStack py="$1.5" px="$2">
         <Toast.Title lh="$1">{currentToast.title}</Toast.Title>
