@@ -19,24 +19,20 @@ export function ListCard(props) {
   const { push } = useRouter()
 
   const onProductCardPress = (id) => {
-    push(`products/${id}`)
+    push(`/products/${id}`)
   }
 
   if (media.sm) {
     return (
       <XStack
         onPress={() => onProductCardPress(props.product.id)}
-        style={{
-          flex: 1,
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          padding: 5,
-          width,
-          height: 60,
-          alignItems: 'center',
-        }}
+        justifyContent='space-between'
+        width={width}
+        marginBottom={10}
+        paddingRight={10}
       >
-        <View>
+        <XStack
+        >
           <Image
             resizeMode="cover"
             alignSelf="center"
@@ -53,7 +49,7 @@ export function ListCard(props) {
             <Text>{props.product.productName}</Text>
             <Text>{`${props.product.price}$`}</Text>
           </View>
-        </View>
+        </XStack>
         <Button borderRadius={18} height={40} borderWidth={1}>
           Buy
         </Button>
