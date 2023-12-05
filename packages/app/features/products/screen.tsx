@@ -1,6 +1,16 @@
-import { View, Button, YStack, ProductListCard, Text, BottomSheet, useMedia, useWindowDimensions } from '@my/ui'
+import {
+  View,
+  Button,
+  YStack,
+  ProductListCard,
+  Text,
+  BottomSheet,
+  useMedia,
+  useWindowDimensions,
+  useToastController,
+} from '@my/ui'
 import { useState } from 'react'
-import { StyleSheet, FlatList } from 'react-native'
+import { FlatList } from 'react-native'
 import { useLink } from 'solito/link'
 import { ChevronDown } from '@tamagui/lucide-icons'
 
@@ -96,13 +106,38 @@ export function ProductsScreen() {
     },
   ]
   const { width } = useWindowDimensions()
-
+  const toast = useToastController()
   return (
     <YStack f={1} jc="center" ai="center" space>
       <View
-        style={[styles.titleContainer, {width}]}
+        width={width}
+        flexDirection="row"
+        justifyContent="space-between"
+        padding="$space.4"
+        paddingLeft={media.sm ? '$space.3' : '$space.10'}
+        paddingRight={media.sm ? '$space.3' : '$space.10'}
+        alignItems="center"
       >
-        <Text style={styles.text}>Products</Text>
+        <Text
+          onPress={() => {
+            toast.show('on press Title', {
+              message: 'Just showing how toast works...',
+              duration: 3000,
+            })
+          }}
+          onHoverIn={() => {
+            toast.show('On hover title', {
+              message: 'Just showing how toast works...',
+              duration: 3000,
+            })
+          }}
+          cursor='pointer'
+          color="#FFF"
+          fontSize={media.sm ? '$8' : '$9'}
+          fontWeight="700"
+        >
+          Products
+        </Text>
         <Button onPress={() => setIsOpen(true)}>Filters</Button>
       </View>
       {media.sm ? (
@@ -112,16 +147,9 @@ export function ProductsScreen() {
           renderItem={({ item }) => <ProductListCard product={item} />}
         />
       ) : (
-        <View
-          style={{
-            flexDirection: 'row',
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-          }}
-        >
+        <View flexDirection="row" flexWrap="wrap" justifyContent="center">
           {list.map((item) => (
-            <ProductListCard key={item.id}  width={400} product={item} />
+            <ProductListCard key={item.id} width={400} product={item} />
           ))}
         </View>
       )}
@@ -132,7 +160,7 @@ export function ProductsScreen() {
         toggleSheet={() => {
           setIsOpen(!isOpen)
         }}
-      >    
+      >
         <>
           <Text color="#FFF">No filters available</Text>
           <Button
@@ -144,30 +172,7 @@ export function ProductsScreen() {
             }}
           />
         </>
-        </BottomSheet>
+      </BottomSheet>
     </YStack>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#fff',
-  },
-  titleContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingLeft: 30,
-    paddingRight: 10,
-    paddingTop: 20,
-  },
-  text: {
-    color: '#FFF',
-    fontSize: 30,
-    fontWeight: "700",
-    textAlign: 'left',
-  },
-})
