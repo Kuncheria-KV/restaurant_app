@@ -6,11 +6,11 @@ export function ProductCard(props: CardProps) {
     <Card elevate size="$4" bordered {...props}>
       <Card.Header padded>
         <H2>Sony A7IV</H2>
-        <Paragraph theme="alt2">Now available</Paragraph>
+        <Paragraph>Now available</Paragraph>
       </Card.Header>
       <Card.Footer padded>
         <XStack flex={1} />
-        <Button borderRadius="$10">
+        <Button borderRadius="$10" theme="active">
           <Text>Purchase</Text>
         </Button>
       </Card.Footer>
