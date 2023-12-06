@@ -1,21 +1,9 @@
-import { View, StyleSheet, Text } from 'react-native'
+import { Container, StyledText } from "@my/ui/src";
 
 export function ProductsScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>ProductsScreen</Text>
-    </View>
-  )
+    <Container>
+      <StyledText>ProductsScreen</StyledText>
+    </Container>
+  );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#fff',
-  },
-  text: {
-    color: '#000',
-  },
-})

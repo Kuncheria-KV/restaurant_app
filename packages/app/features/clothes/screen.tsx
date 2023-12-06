@@ -1,9 +1,9 @@
 import { Container, StyledText } from "@my/ui/src";
 
-export function ProfileScreen() {
+export function ClothesScreen() {
   return (
     <Container>
-      <StyledText>ProfileScreen</StyledText>
+      <StyledText>ClothesScreen</StyledText>
     </Container>
   );
 }
