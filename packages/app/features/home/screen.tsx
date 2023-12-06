@@ -2,6 +2,7 @@ import React from 'react'
 import { View, StyleSheet, Text } from 'react-native'
 import { useLink } from 'solito/link'
 import { Button } from '@my/ui' // Ensure this import path is correct for your project
+import { ThemeSwitch } from '@my/ui/src/ThemeSwitch/ThemeSwitch'
 
 export function HomeScreen() {
   // Link properties for navigation buttons
@@ -21,6 +22,7 @@ export function HomeScreen() {
       <Button {...profileLinkProps} style={styles.link}>
         Profile
       </Button>
+      <ThemeSwitch size="$5"/>
     </View>
   )
 }

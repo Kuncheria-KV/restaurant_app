@@ -1,4 +1,4 @@
-import { createTamagui } from 'tamagui'
+import { ThemeName, Themes, createTamagui } from 'tamagui'
 import { createInterFont } from '@tamagui/font-inter'
 import { shorthands } from '@tamagui/shorthands'
 import { themes, tokens } from '@tamagui/themes'
@@ -50,7 +50,6 @@ const bodyFont = createInterFont(
     sizeLineHeight: (size) => Math.round(size * 1.1 + (size > 20 ? 10 : 10)),
   }
 )
-
 export const config = createTamagui({
   defaultFont: 'body',
   animations,
@@ -61,7 +60,7 @@ export const config = createTamagui({
     body: bodyFont,
     heading: headingFont,
   },
-  themes:nikeThemes,
+  themes: nikeThemes,
   tokens,
   media: createMedia({
     xs: { maxWidth: 660 },
