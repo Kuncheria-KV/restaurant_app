@@ -1,3 +1,16 @@
+import { useToastController } from '@tamagui/toast';
+import { useColorScheme } from 'react-native'
+
 export const useCurrentTheme = (): [string, () => void] => {
-    return ["mobile theme", () => {}]
+    const toast = useToastController()
+    const scheme = useColorScheme();
+
+    const toggleTheme = () => {
+        toast.show('Toggle not Implemented', {
+          message: "Feature not ready yet",
+          native: true,
+        })
+      }
+
+    return [scheme!, toggleTheme]
 }

@@ -1,4 +1,4 @@
-import {Sheet} from '@my/ui'
+import { Sheet } from "tamagui"
 
 export const BottomSheet = ({isOpen = false, toggleSheet, children}) => {
   return (
