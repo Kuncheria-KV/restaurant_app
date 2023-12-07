@@ -8,6 +8,7 @@ import {
   useMedia,
   useWindowDimensions,
   useToastController,
+  H1,
 } from '@my/ui'
 import { useState } from 'react'
 import { FlatList } from 'react-native'
@@ -118,7 +119,7 @@ export function ProductsScreen() {
         paddingRight={media.sm ? '$space.3' : '$space.10'}
         alignItems="center"
       >
-        <Text
+        <H1
           onPress={() => {
             toast.show('on press Title', {
               message: 'Just showing how toast works...',
@@ -132,12 +133,9 @@ export function ProductsScreen() {
             })
           }}
           cursor='pointer'
-          color="#FFF"
-          fontSize={media.sm ? '$8' : '$9'}
-          fontWeight="700"
         >
           Products
-        </Text>
+        </H1>
         <Button onPress={() => setIsOpen(true)}>Filters</Button>
       </View>
       {media.sm ? (

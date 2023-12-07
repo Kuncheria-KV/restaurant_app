@@ -1,43 +1,27 @@
 import React from 'react'
-import { View, StyleSheet, Text } from 'react-native'
 import { useLink } from 'solito/link'
-import { Button } from '@my/ui' // Ensure this import path is correct for your project
+import { Button, View, Text, Stack, XStack, YStack, styled, H1, H4, useMedia } from '@my/ui' // Ensure this import path is correct for your project
+import { ThemeSwitch } from '@my/ui/src/ThemeSwitch/ThemeSwitch'
+
+const StyledYStack = styled(YStack, {flex: 1, alignItems: "center", justifyContent:"center"})
 
 export function HomeScreen() {
+
   // Link properties for navigation buttons
   const productsLinkProps = useLink({ href: '/products/' })
   const cartLinkProps = useLink({ href: '/cart/' })
   const profileLinkProps = useLink({ href: '/profile/' })
+  const media = useMedia()
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Welcome Nike</Text>
-      <Button {...productsLinkProps} style={styles.link}>
-        Products
-      </Button>
-      <Button {...cartLinkProps} style={styles.link}>
-        Cart
-      </Button>
-      <Button {...profileLinkProps} style={styles.link}>
-        Profile
-      </Button>
-    </View>
+    <StyledYStack space>
+      <H1>Welcome Nike</H1>
+      <Stack flexDirection={media.sm ? 'column' : 'row'} space>
+        <Button {...productsLinkProps}>Products</Button>
+        <Button {...cartLinkProps}>Cart</Button>
+        <Button {...profileLinkProps}>Profile</Button>
+        <ThemeSwitch size="$5" />
+      </Stack>
+    </StyledYStack>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#fff',
-  },
-  text: {
-    color: '#000',
-    marginBottom: 20,
-  },
-  link: {
-    color: 'white',
-    marginBottom: 20,
-  },
-})

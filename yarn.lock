@@ -3269,10 +3269,12 @@ __metadata:
     "@tamagui/build": latest
     "@tamagui/cli": ^1.79.6
     "@tamagui/font-inter": latest
+    "@tamagui/lucide-icons": ^1.79.6
     "@tamagui/react-native-media-driver": latest
     "@tamagui/shorthands": latest
     "@tamagui/themes": latest
     "@tamagui/toast": latest
+    react-native-svg: ^14.1.0
     tamagui: latest
   languageName: unknown
   linkType: soft
@@ -5010,6 +5012,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tamagui/helpers-icon@npm:1.79.6":
+  version: 1.79.6
+  resolution: "@tamagui/helpers-icon@npm:1.79.6"
+  dependencies:
+    "@tamagui/core": 1.79.6
+  peerDependencies:
+    react: "*"
+    react-native-svg: ">=12"
+  checksum: ab6bddb519660fa2cd25048142a6ac699af37517ed8f044c9ce808ac7af0bfa4bd4932302780e6fde7886e70754735b272669ff3d05c3297d7176532c34ed738
+  languageName: node
+  linkType: hard
+
 "@tamagui/helpers-node@npm:1.79.1":
   version: 1.79.1
   resolution: "@tamagui/helpers-node@npm:1.79.1"
@@ -5116,6 +5130,19 @@ __metadata:
   peerDependencies:
     react: "*"
   checksum: 471d0bfd0caad4b38ac554e9b32f936ca03c533a31cf00cfd4f5568229d2d7c0959f35ffa39bc465733f124b2f0f35f2f9bdcd00c278ae78340630fb99d38711
+  languageName: node
+  linkType: hard
+
+"@tamagui/lucide-icons@npm:^1.79.6":
+  version: 1.79.6
+  resolution: "@tamagui/lucide-icons@npm:1.79.6"
+  dependencies:
+    "@tamagui/core": 1.79.6
+    "@tamagui/helpers-icon": 1.79.6
+  peerDependencies:
+    react: "*"
+    react-native-svg: ">=12"
+  checksum: 381804c59062fce241e0d590820c9367abe3740a8b559d8bdc9b5dbb45635c173e61aec5a4da276ae61921a22acb57972d4a4af3434db6693bce6668bdab1882
   languageName: node
   linkType: hard
 

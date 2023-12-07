@@ -1,5 +1,5 @@
 import React from 'react'
-import { XStack, ScrollView , useWindowDimensions, ProductCard, styled, useMedia} from '@my/ui'
+import {  ScrollView , ProductCard, useMedia} from '@my/ui'
 
 
 const Recommendations = ScrollView.styleable((props , ref) => {

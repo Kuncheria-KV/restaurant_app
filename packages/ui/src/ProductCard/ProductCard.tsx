@@ -1,7 +1,6 @@
 import { Button, Card, CardProps, H2, Paragraph, XStack, Image, Text, useMedia } from 'tamagui'
 
 export function ProductCard(props: CardProps) {
-
   return (
     <Card elevate size="$4" bordered {...props}>
       <Card.Header padded>
@@ -10,7 +9,7 @@ export function ProductCard(props: CardProps) {
       </Card.Header>
       <Card.Footer padded>
         <XStack flex={1} />
-        <Button borderRadius="$10" theme="active">
+        <Button borderRadius="$10" theme="green_active">
           <Text>Purchase</Text>
         </Button>
       </Card.Footer>
