@@ -36,13 +36,19 @@ export function ListCard(props) {
           <Image
             resizeMode="cover"
             alignSelf="center"
-            style={{ height: 35, width: 35, overflow: 'hidden', marginRight: 15 }}
+            height={35}
+            width={35}
+            overflow="hidden"
+            marginRight={15}
             source={{ uri: 'https://cdn-icons-png.flaticon.com/512/107/107804.png' }}
           />
           <Image
             resizeMode="cover"
             alignSelf="center"
-            style={{ height: 50, width: 50, overflow: 'hidden', marginRight: 15 }}
+            height={50}
+            width={50}
+            overflow="hidden"
+            marginRight={15}
             source={{ uri: props.product.image }}
           />
           <View style={{ minWidth: 150 }} justifyContent="center" flexDirection="column">
@@ -74,7 +80,10 @@ export function ListCard(props) {
           <Image
             resizeMode="cover"
             alignSelf="center"
-            style={{ height: 35, width: 35, overflow: 'hidden', marginRight: 15 }}
+            height={35}
+            width={35}
+            overflow="hidden"
+            marginRight={15} 
             source={{ uri: 'https://cdn-icons-png.flaticon.com/512/107/107804.png' }}
           />
           <Button borderRadius="$10">
@@ -85,7 +94,9 @@ export function ListCard(props) {
           <Image
             resizeMode="cover"
             alignSelf="center"
-            style={{ height: '100%', width: '100%', overflow: 'hidden' }}
+            height="100%"
+            width="100%"
+            overflow="hidden"   
             source={{ uri: props.product.image }}
           />
         </Card.Background>
