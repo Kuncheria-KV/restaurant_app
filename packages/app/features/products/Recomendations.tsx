@@ -17,7 +17,6 @@ const Recommendations = ScrollView.styleable((props , ref) => {
             scale={0.9}
             hoverStyle={{ scale: 0.925 }}
             pressStyle={{ scale: 0.875 }}
-            theme="green"
           />
         ))}
     </ScrollView>
