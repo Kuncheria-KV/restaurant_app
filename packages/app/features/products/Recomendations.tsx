@@ -1,5 +1,5 @@
 import React from 'react'
-import { XStack, ScrollView , useWindowDimensions, ProductCard, styled, useMedia} from '@my/ui'
+import {  ScrollView , ProductCard, useMedia} from '@my/ui'
 
 
 const Recommendations = ScrollView.styleable((props , ref) => {
@@ -17,6 +17,7 @@ const Recommendations = ScrollView.styleable((props , ref) => {
             scale={0.9}
             hoverStyle={{ scale: 0.925 }}
             pressStyle={{ scale: 0.875 }}
+            theme="green"
           />
         ))}
     </ScrollView>

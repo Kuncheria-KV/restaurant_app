@@ -1,4 +1,4 @@
-import { View, Button, YStack, ProductListCard, Text, BottomSheet, useMedia, useWindowDimensions } from '@my/ui'
+import { View, Button, YStack, ProductListCard, Text, BottomSheet, useMedia, useWindowDimensions, H1 } from '@my/ui'
 import { useState } from 'react'
 import { StyleSheet, FlatList } from 'react-native'
 import { useLink } from 'solito/link'
@@ -102,7 +102,7 @@ export function ProductsScreen() {
       <View
         style={[styles.titleContainer, {width}]}
       >
-        <Text style={styles.text}>Products</Text>
+        <H1>Products</H1>
         <Button onPress={() => setIsOpen(true)}>Filters</Button>
       </View>
       {media.sm ? (
@@ -163,11 +163,5 @@ const styles = StyleSheet.create({
     paddingLeft: 30,
     paddingRight: 10,
     paddingTop: 20,
-  },
-  text: {
-    color: '#FFF',
-    fontSize: 30,
-    fontWeight: "700",
-    textAlign: 'left',
   },
 })

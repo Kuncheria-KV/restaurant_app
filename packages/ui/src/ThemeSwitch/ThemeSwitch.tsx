@@ -1,31 +1,19 @@
-import { useState } from 'react'
-import {
-  Label,
-  Separator,
-  SizeTokens,
-  Switch,
-  XStack,
-  useIsomorphicLayoutEffect,
-  useTheme,
-} from 'tamagui'
-import { useThemeSetting } from '@tamagui/next-theme'
+import { Button, Label, SizeTokens, Switch, XStack } from 'tamagui'
+import { useCurrentTheme } from './useCurrentTheme'
+
+const icons = {
+  system: "system",
+  light: "light",
+  dark: "dark",
+}
 
 export const ThemeSwitch = (props: { size: SizeTokens; defaultChecked?: boolean }) => {
   const id = `switch-${props.size.toString().slice(1)}-${props.defaultChecked ?? ''}}`
-  const themeSetting = useThemeSetting()!
-  const [clientTheme, setClientTheme] = useState<string>('light')
+  const [currentTheme, toggleTheme] = useCurrentTheme()
+  const handleCheckedChange = () => {
+    toggleTheme()
+  }
 
-  // Works only for next
-  // TODO Find alternative for mobile
-  useIsomorphicLayoutEffect(() => {
-    const theme =
-      themeSetting.resolvedTheme === 'system'
-        ? themeSetting.systemTheme
-        : themeSetting.resolvedTheme
-
-    setClientTheme(theme || 'light')
-  }, [themeSetting.current, themeSetting.resolvedTheme])
-  
   return (
     <XStack width={200} alignItems="center" space="$4">
       <Label
@@ -36,11 +24,16 @@ export const ThemeSwitch = (props: { size: SizeTokens; defaultChecked?: boolean 
         htmlFor={id}
         theme="alt"
       >
-        {clientTheme}
+        {currentTheme}
       </Label>
-      <Switch id={id} size={props.size} defaultChecked={props.defaultChecked}>
-        <Switch.Thumb animation="quick" />
-      </Switch>
+      <Button
+        onPress={handleCheckedChange}
+        {...props}
+        aria-label="Toggle light/dark color scheme"
+        
+      >
+        {icons[currentTheme]}
+      </Button>
     </XStack>
   )
 }
