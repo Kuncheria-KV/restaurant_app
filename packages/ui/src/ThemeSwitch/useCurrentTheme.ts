@@ -8,7 +8,6 @@ export const useCurrentTheme = (): [string, () => void] => {
     const toggleTheme = () => {
         toast.show('Toggle not Implemented', {
           message: "Feature not ready yet",
-          native: true,
         })
       }
 
